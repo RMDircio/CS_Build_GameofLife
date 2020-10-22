@@ -1,44 +1,45 @@
 
 
+'''
+Game of Life
+Cell class
+Martin A. Aaberge
+'''
+
 class Cell:
-
     def __init__(self):
-        ''' 
-        set up cell to default of dead
         '''
-
-
-    ### set up cell rules ###
-
-    # set cell to off/dead
-    def set_to_dead(self):
-        '''
-        Sets the cell to dead/off
+        Class holding init status of cell (dead).
+        Ability to set- and fetch new statuses with functions
         '''
         self._status = 'Dead'
 
-    # set cell to on/alive
-    def set_to_alive(self):
+    def set_dead(self):
         '''
-        Sets the cell to alive/on
+        method sets the cell status to DEAD
+        '''
+        self._status = 'Dead'
+
+    def set_alive(self):
+        '''
+        method sets the cell status to ALIVE
         '''
         self._status = 'Alive'
 
-    # is cell on/alive
-    def cell_alive(self):
+    def is_alive(self):
         '''
-        Checks if cell is alive
+        method checks if the cell is ALIVE
+        returns True if it is alive, False if not.
         '''
         if self._status == 'Alive':
             return True
         return False
 
-    # what grid should print
-    def print_character(self):
+    def get_print_character(self):
         '''
-        Determines what status of the cell that will be printed on the grid
+        method returning a status character of our choice to print on the board
         '''
-        if self.cell_alive():
+        if self.is_alive():
             return 'O'
-        return '*'
+        return '.'
  
